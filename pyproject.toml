@@ -1,0 +1,35 @@
+[project]
+name = "helpdesk-app"
+version = "0.1.0"
+description = "Helpdesk Ticket Monitor: process mining và cảnh báo Wait trên event log Helpdesk"
+authors = [
+    { name = "hungtran24", email = "quochung24work@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "gensim>=4.4.0",
+    "networkx>=3.7",
+    "pandas>=3.1.0",
+    "pm4py>=2.7.23.11",
+    "scikit-learn>=1.9.1",
+    "streamlit>=1.66.1",
+    "torch>=2.15.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "nbconvert>=7.17.2",
+]
